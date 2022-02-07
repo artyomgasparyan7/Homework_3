@@ -107,6 +107,15 @@ public class Main {
      * -	Cast the result to float type,print float type
      * -	Cast result to int,print int type
      */
+
+
+    /*public static double convertTemperTypeOfDouble(double doubleNum){
+
+        double celsiusResult = (doubleNum - 32) * 5 / 9;
+
+
+        return celsiusResult;
+    }*/
     public static void convertTemperature() {
 
         Scanner sc = new Scanner(System.in);
@@ -558,6 +567,11 @@ public class Main {
 
     public static void main(String[] args) {
 
+
+        /*Scanner sc = new Scanner(System.in);
+
+        double doubleInput = sc.nextDouble();*/
+
         //Widening Primitive Conversion (Implicit)
         wideningPrimitiveConversion();
 
@@ -606,6 +620,8 @@ public class Main {
 
         // Find the value of the variable result after executing the following sentences:
         test4();
+
+       // System.out.println(convertTemperTypeOfDouble(doubleInput));
 
     }
 }
