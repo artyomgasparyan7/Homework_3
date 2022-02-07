@@ -8,7 +8,7 @@ package com.company.pachage_for_day5;
  *  write method which will print all information about person
  *  create 2 person objects, print all info about them
  */
-class HomeworkDay5 {
+/*class HomeworkDay5 {
 
     private String name;
     private int age;
@@ -50,7 +50,7 @@ class HomeworkDay5 {
 
     }
 
-}
+}*/
 
 /**
  * . Define Employee class which
@@ -60,7 +60,7 @@ class HomeworkDay5 {
  *  create 5 employee objects(3 male and 2 female)
  *  3 of them are working in same department  print all info about them
  */
-class Employee {
+/*class Employee {
 
     int id,age;
     String name,department,gender;
@@ -85,7 +85,7 @@ class Employee {
     }
 
 
-}
+}*/
 
 public class Day_5_Test {
 
@@ -99,11 +99,11 @@ public class Day_5_Test {
         obj2.allInform();
 
         //create 5 employee objects(3 male and 2 female)
-        Employee employee1 = new Employee(7,"Artyom","backend",22,"male");
-        Employee employee2 = new Employee(1,"Asatur","frontend",25,"male");
-        Employee employee3 = new Employee(3,"Babken","backend",32,"male");
-        Employee employee4 = new Employee(2,"Eva","backend",24,"female");
-        Employee employee5 = new Employee(4,"Arpi","frontend",27,"female");
+        Employee employee1 = new Employee(7,"Artyom","backend",22,'m');
+        Employee employee2 = new Employee(1,"Asatur","frontend",25,'m');
+        Employee employee3 = new Employee(3,"Babken","backend",32,'m');
+        Employee employee4 = new Employee(2,"Eva","backend",24,'f');
+        Employee employee5 = new Employee(4,"Arpi","frontend",27,'f');
 
         employee1.allInform();
         employee2.allInform();
