@@ -9,11 +9,13 @@ public class HomeworkTest8 {
 
     public static void main(String[] args) {
         //Random random = new Random();
-        eligibleToVote();
+       eligibleToVote();
 
         printEvenNumber();
 
-        printRandom();
+        isEvenOR(4);
+
+       printRandom();
 
         printMultipleOf5();
 
@@ -27,6 +29,8 @@ public class HomeworkTest8 {
 
         checkYearIsLeap();
         //printIntRandom(random.nextInt());
+
+        isLeapYear(4);
 
         printIntRandom();
 
@@ -60,7 +64,7 @@ public class HomeworkTest8 {
         if (age >= 18) {
 
             System.out.println("\n Person is eligible To Vote");
-        } else if (age >= 0 && age < 18) {
+        } else if (age >= 0 ) {
 
             System.out.println("\n Person is not eligible To Vote");
         } else System.err.println("Person ages isn't to be negative value!!!");
@@ -91,6 +95,16 @@ public class HomeworkTest8 {
         System.out.println("By ternary operator");
         System.out.println("Input num is ever: " + result);
 
+    }
+
+    public static boolean isEvenOR(double s) {
+
+      /* if (s % 2 == 0 && s != 0) {
+           System.out.println("Number is even!");
+       }*/
+        boolean c = s % 2 == 0 && s != 0;
+        System.out.println(c);
+        return false;
     }
 
     /**
@@ -243,6 +257,16 @@ public class HomeworkTest8 {
 
             System.out.println("Yes :  not a leap year : ");
         } else System.out.println("No: Leap year");
+    }
+
+    public static boolean isLeapYear(int s) {
+
+        /*int num = sc.nextInt();
+        return (num % 4 == 0 && num % 100 != 0) || (num % 400 == 0);*/
+
+        boolean c = (s % 4 == 0 && s % 100 != 0) || (s % 400 == 0);
+        System.out.println(c);
+        return false;
     }
 
     /**
@@ -489,6 +513,7 @@ public class HomeworkTest8 {
         } else System.err.println("Coordinate point is not same quarter");
     }
 
+
     /**
      * Given 3 positive numbers different from 0, Determine if there is
      * a non-degenerate triangle with such sides.
@@ -591,10 +616,10 @@ public class HomeworkTest8 {
         System.out.println("Print all decisions: ");
         if (D >= 0) {
 
-            x1 = (-b + Math.sqrt(D)) / 2 * a;
+            x1 = (-b + Math.sqrt(D)) / (2 * a);
             System.out.println("X1 value is : " + x1);
 
-            x2 = (-b - Math.sqrt(D)) / 2 * a;
+            x2 = (-b - Math.sqrt(D)) / (2 * a);
             System.out.println("X2 value is : " + x2);
 
         } else System.out.println("Can't be: " + logic);
