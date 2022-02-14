@@ -25,13 +25,13 @@ public class HomeWorkTest9 {
 
         Test.chooseCorrectAnswer('d');
 
-        Test.checkVowelOrConsonant('A');
+        Test.checkVowelOrConsonant('-');
 
         Test.isPressedNumberKeys(4);
 
         Test.isEvenOrOdd(4);
 
-        Test.simpleCalculator('+');
+        Test.simpleCalculator('/');
 
         Test.inputStringVariableDay("tuesday");
 

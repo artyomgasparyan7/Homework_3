@@ -99,6 +99,9 @@ public class Test {
             System.out.println("0");
         }else{ System.out.println("negative");}
 
+     String result2 = (value2>0)?"positive":((value2 == 0)?"0":"negative");
+        System.out.println(result2);
+
     }
 
     /**
@@ -107,15 +110,18 @@ public class Test {
      * @param a
      * @param b
      */
-    public static void maxValue(int a, int b){
+    public static int maxValue(int a, int b){
 
         /*int res = Math.max(5,8);
         System.out.println("Max value: " + res);*/
        int  Smax = (a > b) ? a : b;
+       //return Smax;
 
         // Print the largest number
         System.out.println("Max number between " + b +
                 " and " + a + " is: " + Smax + ". " );
+        return Smax;
+
     }
 
     /**
@@ -123,11 +129,12 @@ public class Test {
      * - - achieve Math.abs(a) function
      * @param value
      */
-    public static void absaluteValue(int value){
+    public static int absaluteValue(int value){
 
         int result = (value<0)?-value:value;
 
         System.out.println("achieve Math.abs(a) function: " + result);
+        return result;
     }
 
     /**
@@ -140,7 +147,7 @@ public class Test {
      */
     public static int checkName(String name) {
 
-        int result = name == null ? -1 : name == " " ? 0 : 1;
+        int result = name.equals(null) ? -1 : name == " " ? 0 : 1;
 
         return result;
     }
@@ -152,10 +159,12 @@ public class Test {
      * @param b
      * @param c
      */
-    public static void printMaxValue(int a, int b, int c){
+    public static int printMaxValue(int a, int b, int c){
 
         int max = (a>=b&&a>=c) ? a : (b>=a&&b>=c) ? b : c;
         System.out.println("Max value of 3 numbers: " + max);
+
+        return max;
     }
 
     /**
@@ -165,7 +174,7 @@ public class Test {
      * @param x
      */
     public static void chooseCorrectAnswer(char x){
-
+//
         System.out.println("What is the correct way to declare a variable to store an integer value in Java?");
         System.out.println("a. int 1x=10;");
         System.out.println("b. int x=10;");
@@ -176,8 +185,9 @@ public class Test {
         switch (x){
 
             case 'a':
+            case 'd':
 
-                System.out.println("Invalide choice, name of type cann't be start numbers!!!");
+                System.out.println("Invalide !");
                 break;
 
             case 'b':
@@ -186,11 +196,7 @@ public class Test {
                 System.out.println("Congratulation");
                 break;
 
-            case 'd':
 
-                System.out.println("Invalide choice, String Type name cann't be start lowerCase");
-
-                break;
             default:
                 System.out.println("this character mistake value!!!");
 
@@ -203,6 +209,9 @@ public class Test {
      */
     public static void checkVowelOrConsonant(char x){
 
+        if (!(x >= 'A' && x <= 'Z') && !(x >= 'a' && x <= 'z')){
+            System.err.println("Inupt error");
+        }else {
         switch (x){
 
             case 'a':
@@ -226,7 +235,7 @@ public class Test {
             default:
                 System.out.println("Consonant : " + x);
 
-        }
+        }}
 
     }
 
@@ -317,8 +326,11 @@ public class Test {
 
             case '/':
 
+                if (num2!=0){
                 System.out.print("num1 / num2 = ");
-                System.out.println(num1 / num2);
+                System.out.println(num1 / num2);}else {
+                    System.err.println("number cann't / of 0");
+                }
                 break;
 
 
@@ -335,40 +347,41 @@ public class Test {
     public static void inputStringVariableDay(String day){
 
         String result = day.toLowerCase(Locale.ROOT);
+        System.out.print("Day of weekday: ");
         switch (result){
 
             case "sunday":
-                System.out.print("Day of weekday: ");
+                //System.out.print("Day of weekday: ");
                 System.out.println(1);
                 break;
 
             case "monday":
-                System.out.print("Day of weekday: ");
+               // System.out.print("Day of weekday: ");
                 System.out.println(2);
                 break;
 
             case "tuesday":
-                System.out.print("Day of weekday: ");
+               // System.out.print("Day of weekday: ");
                 System.out.println(3);
                 break;
 
             case "wednesday":
-                System.out.print("Day of weekday: ");
+               // System.out.print("Day of weekday: ");
                 System.out.println(4);
                 break;
 
             case "thursday":
-                System.out.print("Day of weekday: ");
+                //System.out.print("Day of weekday: ");
                 System.out.println(5);
                 break;
 
             case "friday":
-                System.out.print("Day of weekday: ");
+               // System.out.print("Day of weekday: ");
                 System.out.println(6);
                 break;
 
             case "saturday":
-                System.out.print("Day of weekday: ");
+                //System.out.print("Day of weekday: ");
                 System.out.println(7);
                 break;
 
@@ -394,7 +407,11 @@ public class Test {
         average += sc.nextDouble();
         average /= 3;
 
-        if (average >= 80) {
+        String output = "";
+
+        System.out.println("Output is: "+average);
+
+     /*   if (average >= 80) {
 
             System.out.println("Your grade is A");
         } else if (average >= 60 && average<80) {
@@ -405,7 +422,32 @@ public class Test {
             System.out.println("Your grade is C");
         } else {
             System.out.println("Your grade is F");
+        }*/
+
+        switch ((int) (average/10)){
+
+            case 1:
+            case 2:
+            case 3:
+                output = "F";
+                break;
+
+            case 4:
+            case 5:
+                output = "C";
+                break;
+
+            case 6:
+            case 7:
+                output = "B";
+                break;
+
+            default:
+                output = "A";
+
+
         }
+        System.out.println("Your grade is: " + output);
 
     }
 
