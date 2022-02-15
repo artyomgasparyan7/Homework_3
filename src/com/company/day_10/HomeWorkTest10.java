@@ -37,5 +37,7 @@ public class HomeWorkTest10 {
 
         //Test.DetermineValueOfSecondLargestElement();
 
-        Test.computeSumOfDigits(4562);
+       // Test.computeSumOfDigits(4562);
+
+        Test.printRandomIsLowerOrHigher();
 }}

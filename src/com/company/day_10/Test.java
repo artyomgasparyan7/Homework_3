@@ -1,5 +1,6 @@
 package com.company.day_10;
 
+import java.util.Random;
 import java.util.Scanner;
 
 public class Test {
@@ -438,6 +439,38 @@ public class Test {
 
         System.out.println(sum);
     }
+
+    public static void printRandomIsLowerOrHigher(){
+
+        Random random = new Random();
+
+        int secret = random.nextInt(100);
+
+        System.out.println("Of number is 0,99:");
+        System.out.println("try gues my number: ");
+
+        int n = sc.nextInt();
+
+        int count = 0;
+
+        while (n!=secret){
+
+            count++;
+
+            if (n<secret){
+
+                System.out.println("Is lower num: ");
+
+            }else {System.out.println("My num is higher:");}
+
+            n = sc.nextInt();
+        }
+        System.out.println("Super, my num is " + count);
+
+
+
+    }
+
 
 
 }
