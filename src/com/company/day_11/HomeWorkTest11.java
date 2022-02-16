@@ -34,15 +34,15 @@ public class HomeWorkTest11 {
 
        // Test.printCheckerBoardPicture(4,9);
 
-        //Test.printPicture();
+        Test.printPicture(5);
 
        // Test.printAPattern(8);
 
         //Test.printBPattern(8);
 
-        Test.printPatternC(8);
-
-        Test.printPatternD(8);
+//        Test.printPatternC(8);
+//
+//        Test.printPatternD(8);
 
     }
 }

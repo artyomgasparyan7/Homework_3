@@ -66,6 +66,21 @@ public class Test {
 
     }
 
+    public static void printExactSquares(int a, int b){
+
+        for (int i = a; i <=b; i++) {
+
+            for (int j = 1; j < i ; j++) {
+
+                if (j == (double)i/j){
+
+                    System.out.println(i);
+
+                }
+            }
+        }
+    }
+
     /**
      * .Enters 2 integer numbers : x and d from console
      * Count and print one number - how many times the digit d occurs in
@@ -105,7 +120,7 @@ public class Test {
         }
         return rev_num;*/
 
-        for (; ; ) {
+       for (; ; ) {
 
             rev_num = rev_num * 10 + number % 10;
             number = number / 10;
@@ -113,6 +128,19 @@ public class Test {
                 return rev_num;
             }
         }
+
+        /*boolean excludeZeros = true;
+        for (int i = number; i !=0; i/=10) {
+            if (i%10 ==0&&excludeZeros){
+
+                continue;
+            }
+            System.out.println(i%10 + " ");
+            excludeZeros = false;
+
+        }*/
+
+
     }
 
     /**
@@ -145,19 +173,34 @@ public class Test {
      */
     public static void countNumberOfNaturalDivisorsOfX(int n) {
 
-        int count = 0;
-        if (n <= 2 * 109) {
-            for (int i = 1; i <= n; i++) {
+//        int count = 0;//1
+//        if (n <= 2 * 109) {
+//            for (int i = 1; i <= n; i++) {//n/2
+//
+//
+//                if (n % i == 0) {
+//                    count++;
+//                }
+//
+//
+//            }
+//            System.out.println(count);
 
+        int count = 2;
 
-                if (n % i == 0) {
-                    count++;
+        for (int i = 2; i*i <=n; i++) {
+
+            if (n%i ==0){
+
+                count+=2;
+
+                if (n/i ==i){
+
+                    count--;
                 }
-
-
-            }
-            System.out.println(count);
         }
+        }
+        System.out.println(count);
     }
 
     /**
@@ -205,7 +248,7 @@ public class Test {
 
     public static int numberFromBinaryToDecimal(int n) {
 
-        int num = n;
+       /* int num = n;
         int dec_value = 0;
 
 
@@ -221,7 +264,18 @@ public class Test {
             base = base * 2;
         }
 
-        return dec_value;
+        return dec_value;*/
+
+        int dec = 0;
+        int pow = 1;
+
+        for (int i = n; i!=0; i/=10) {
+
+            dec+=(pow*i%10);
+
+            pow <<=1;
+        }
+        return dec;
 
     }
 
@@ -277,14 +331,17 @@ public class Test {
 
                 count++;
 
-                if (count == n){
+               /* if (count == n){
 
                     break;
-                }
-            }
-            if (count == n){
+                }*/
 
-                break;
+                if (count == n){
+                    return;
+            }
+            /*if (count == n){
+
+                break;*/
             }
 
 
@@ -334,9 +391,9 @@ public class Test {
      * Write a program that prompts user for the size (a positive integer in
      * int); and prints the multiplication table as shown:
      */
-    public static void printPicture(){
+    public static void printPicture(int n){
 
-        System.out.println("*    |    1    2    3    4    5    6    7    8    9    10");
+       /* System.out.println("*    |    1    2    3    4    5    6    7    8    9    10");
         System.out.println("---------------------------------------------------------");
         for (int i = 1; i <= 10; ++i) {
 
@@ -423,6 +480,31 @@ public class Test {
 
 
 
+            System.out.println();
+        }*/
+
+        for (int i = 0; i <= n; i++) {
+            if (i == 0) {
+                System.out.print(" * | ");
+            } else {
+                System.out.print(i + "   ");
+            }
+        }
+
+        System.out.print("\n____________________________________________\n");
+        for (int i = 1; i <= n; i++) {
+            if (i < 10) {
+                System.out.print(" " + i + " |");
+            } else {
+                System.out.print(i + " |");
+            }
+            for (int j = 1; j <= n; j++) {
+                if (i * j < 10) {
+                    System.out.printf("%2d  ", (i * j));
+                } else {
+                    System.out.printf(" %2d ", (i * j));
+                }
+            }
             System.out.println();
         }
 
