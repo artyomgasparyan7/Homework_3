@@ -32,5 +32,17 @@ public class HomeWorkTest12 {
         Test.printElementsInReverseOrder(arrRev);
 
         Test.rearrangeElementsOfArrayInReverseOrder(arrRev);
+
+        Test.swapAdjacentElement(arr);
+
+        Test.shiftToRight(arr);
+
+        Test.swapMinMax(arr);
+
+        Test.removeKthElement(arr,5);
+
+        Test.printUniqueElement(arr);
+
+
     }
 }

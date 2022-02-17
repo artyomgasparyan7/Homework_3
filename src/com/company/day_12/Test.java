@@ -96,7 +96,7 @@ public class Test {
         System.out.print("\nprint elements Of list larger than previous element: ");
         int[] a = new int[]{22, 3, 550, 4, 11, 100};
 
-        int max = a[0];
+       /* int max = a[0];
 
         for (int i = 0; i < a.length; i++) {
 
@@ -116,7 +116,16 @@ public class Test {
             }
 
         }
-        System.out.print(previusMax + " ");
+        System.out.print(previusMax + " ");*/
+
+        for (int i = 1; i < a.length ; i++) {
+
+            if (a[i-1] <a[i]){
+
+                System.out.print(a[i] + " ");
+            }
+
+        }
 
     }
 
@@ -178,9 +187,10 @@ public class Test {
     public static void printSmallestValueOfPositiveNumber() {
 
         int min = 0;
-        int arr[] = new int[]{5, -4, 3, -2, 12, 11111};
+        int pos = 1000;
+        int arr[] = new int[]{-10, -4, 3, -2, 12, 11111};
 
-        min = arr[0];
+       /* min = arr[0];
         System.out.print("\nprint Smallest Value Of Positive Number:");
         for (int i = 0; i < arr.length; i++) {
 
@@ -194,7 +204,16 @@ public class Test {
 
             }
         }
-        System.out.print(min + " ");
+        System.out.print(min + " ");*/
+        System.out.print("\nprint Smallest Value Of Positive Number:");
+        for (int x:arr) {
+            if (x>0&&pos>x){
+
+                pos = x;
+            }
+
+        }
+        System.out.print(pos + " ");
     }
 
     /**
@@ -209,6 +228,12 @@ public class Test {
 
 
         int[] arr = new int[]{1, 2, 2, 3, 3, 3, 4, 5, 5, 6};
+
+        if (arr == null || arr.length == 0) {
+
+            System.out.println("Invalid state of array");
+            return;
+        }
 
         for (int i = 0; i < arr.length - 1; i++) {
 
@@ -269,7 +294,7 @@ public class Test {
             System.out.print(newArr[i] + " ");
         }*/
 
-        for (int i = 0; i < arrRev.length; i++) {
+       /* for (int i = 0; i < arrRev.length; i++) {
 
             int i0 = arrRev[0];
             int i1 = arrRev[1];
@@ -284,11 +309,170 @@ public class Test {
             i4 = i0;
 
         }
-        System.out.print(Arrays.toString(arrRev) + " ");
+        System.out.print(Arrays.toString(arrRev) + " ");*/
+
+        /*int temp;
+
+        int len = arrRev.length;
+        int i = 0;
+        for (; i < len/2; i++) {
+
+            temp = arrRev[i];
+            arrRev[i] = arrRev[len - i-1];
+
+            arrRev[len-i-1] = temp;
+        }
+        System.out.println(arrRev[i] + " ");*/
+
+        int arr[] = new int[]{1,2,3,4,5};
+
+        int temp;
+        int start=0;
+        int end = arr.length-1;
+
+        while (start<end){
+            temp = arr[start];
+            arr[start] = arr[end];
+            arr[end] = temp;
+
+            start++;
+            end--;
+
+        }
+        System.out.print(Arrays.toString(arr));
 
     }
 
-    //to be continue!!!
+    /**
+     *
+     * @param arr
+     */
+   public static void swapAdjacentElement(int [] arr){
+int temp;
+       for (int i = 0; i < arr.length; i+=2) {
+
+           temp = arr[i];
+           arr[i] = arr[i+1];
+           arr[i+1] = temp;
+       }
+
+       System.out.println();
+       System.out.println(Arrays.toString(arr));
+   }
+
+   public static void shiftToRight(int arr[]){
+
+       int len = arr.length;
+       int last = arr[arr.length - 1];
+
+       for (int i = arr.length-1; i >0 ; i--) {
+
+           arr[i] = arr[i-1];
+
+       }
+       arr[0] = last;
+
+       System.out.println(Arrays.toString(arr));
+   }
+
+   public static void swapMinMax(int [] arr){
+
+       int minIndex = 0;
+       int maxIndex = 0;
+
+       for (int i = 1; i < arr.length; i++) {
+
+           if (arr[i] >arr[maxIndex]){
+
+               maxIndex = i;
+           }
+
+           if (arr[i]<arr[minIndex]){
+
+               minIndex = i;
+           }
+       }
+       if (minIndex!=maxIndex){
+           int temp = arr[minIndex];
+
+           arr[minIndex] = arr[maxIndex];
+           arr[maxIndex] = temp;
+
+       }
+   }
+
+   public static void removeKthElement(int[] arr,int k){
+
+       int len = arr.length;
+
+       if (k<0 || k>=len){
+
+           System.out.println(k + " is out range: ");
+           return;
+       }
+
+       for (int i = k; i < len-1; i++) {
+
+           arr[i] = arr[i+1];
+
+       }
+
+       //arr[len-1] = 0;
+       len--;
+
+       for (int i = 0; i < len; i++) {
+
+           System.out.print(arr[i] + " ");
+       }
+
+       System.out.println(Arrays.toString(arr));
+   }
+
+   public static void printUniqueElement(int [] arr){
+boolean isUnique;
+       for (int i = 0; i < arr.length; i++) {
+
+           isUnique = true;
+           for (int j = 0; j < arr.length; j++) {
+
+               if (i!=j&& arr[i] == arr[j]){
+
+                   isUnique = false;
+                   break;
+               }
+           }
+
+           if (isUnique){
+
+               System.out.print(arr[i] + " ");
+           }
+       }
+   }
+
+   public static void shiftZeros(int [] arr){
+
+       /*int zeroCunt = 0;
+
+       for (int i = 0; i <arr.length ; i++) {
+
+
+       }*/
+
+       int index = 0;
+int temp;
+       for (int i = 0; i < arr.length; i++) {
+
+           if (arr[i] != 0){
+
+             temp =   arr[i];
+             arr[i] = arr[index];
+             arr[index] = temp;
+             index++;
+           }
+       }
+
+       System.out.println(Arrays.toString(arr));
+   }
 
 
 }
