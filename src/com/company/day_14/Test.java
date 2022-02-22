@@ -19,6 +19,11 @@ public class Test {
      */
     public static char printCharacterOfIndex(String str, int index) {
 
+        if (index< 0 || index >= str.length()){
+            System.out.println("Invalid value: " + index);
+
+            return ' ';
+        }
         return str.charAt(index);
     }
 
@@ -61,7 +66,7 @@ public class Test {
 
 
             charAt = str.toLowerCase().charAt(i);
-            if (charAt == 'a' || charAt == 'e' || charAt == 'i' || charAt == 'o' || charAt == 'u') {
+            if ((charAt>='a'&& charAt<='z')||charAt == 'a' || charAt == 'e' || charAt == 'i' || charAt == 'o' || charAt == 'u') {
                 count++;
 
             }
@@ -183,22 +188,46 @@ public class Test {
      */
     public static boolean isReverseStringPalindrome(String str) {
 
-        System.out.print(str + " to reverse by palindrome: ");
+       /* System.out.print(str + " to reverse by palindrome: ");
 
         String string = str.toLowerCase();
 
         String string2 = reversOfString(string);
-        return string.equals(string2);
+        return string.equals(string2);*/
+        int i = 0, j = str.length()-1;
+
+        while (i<j){
+
+            if (str.charAt(i) != str.charAt(j))
+
+                return false;
+
+                i++;
+                j--;
+
+
+
+
+        }
+        return true;
 
     }
 
     public static boolean isBinarNumber(String str) {
-        for (int i = 0; i < str.length(); i++) {
+        /*for (int i = 0; i < str.length(); i++) {
             if (str.charAt(i) >= '2') {
                 return false;
             }
         }
-        return true;
+        return true;*/
+
+        for (char ch:str.toCharArray()) {
+
+            if (ch!='0' && ch != '1'){
+                return false;
+            }
+        }
+        return  true;
     }
 
     /**
@@ -237,6 +266,8 @@ public class Test {
         int num = Integer.parseInt(str, 2);
 
         return num;
+
+
     }
 
     /**
@@ -245,7 +276,7 @@ public class Test {
      * @param str
      * @return
      */
-    public static void printCountsOfDuplicateCharacters(String str) {
+   /* public static void printCountsOfDuplicateCharacters(String str) {
 
         int count = 0;
         char[] ch = str.toCharArray();
@@ -265,17 +296,95 @@ public class Test {
         // System.out.println(count);
 
 
-    }
+    }*/
 
-    public static char firstNonRepeated(String str) {
-        char[] ch = str.toCharArray();
-        for (int i = 0; i < str.length() - 1; i++) {
-            if (ch[i] != ch[i + 1]) {
-                return ch[i];
+   /* public static StringBuilder countDuplicate(String str){
+
+        StringBuilder duplicates = new StringBuilder();
+        int len = str.length();
+        int index;
+        int line = 0;
+        for (int i = 0; i < len-1; i++) {
+
+            index = 0;
+
+            for (int j = i+1; j < len; j++) {
+
+                if ((str.charAt(i) == str.charAt(j)) && !duplicates.toString().contains(String.valueOf(str.charAt(i)))){
+
+                    duplicates.append(str.charAt(i));
+                    break;
+                }
             }
         }
-        return 0;
+        return duplicates;
+
+    }*/
+
+    public static int countDuplicate(String str){
+
+        int dupCount = 0;
+        int count;
+        int len = str.length();
+
+        for (int i = 0; i < len-1; i++) {
+
+            count = 0;
+
+            for (int j = i+1; j < len; j++) {
+
+                if (str.charAt(i) == str.charAt(j)){
+
+                    count++;
+                }
+            }
+
+            if (count == 1){
+
+                dupCount++;
+            }
+        }
+
+        return dupCount;
     }
+
+//    public static char firstNonRepeated(String str) {
+//       /* char[] ch = str.toCharArray();
+//        for (int i = 0; i < str.length() - 1; i++) {
+//            if (ch[i] != ch[i + 1]) {
+//                return ch[i];
+//            }
+//        }
+//        return 0;*/
+//
+//
+//       /* int len = str.length();
+//        char ch;
+//
+//        boolean hasDuplicate;
+//
+//        for (int i = 0; i < len-1; i++) {
+//
+//            hasDuplicate = false;
+//
+//            for (int j = i+1; j < len; j++) {
+//
+//                if (str.charAt(i)==str.charAt(j)){
+//
+//                    hasDuplicate = true;
+//                    break;
+//                }
+//            }
+//            if (!hasDuplicate){
+//
+//                return str.charAt(i);
+//            }
+//            break;
+//        }
+//        return ;*/
+//    }
+
+
 
     public static void nonRepeatedValue(String str){
 
@@ -296,14 +405,26 @@ public class Test {
     }
 
     public static int countsOfOccurrences(String str, char ch){
-        int count = 0;
+       /* int count = 0;
         char [] ch1 = str.toCharArray();
         for (int i = 0; i <str.length() ; i++) {
             if (ch1[i]==ch){
                 count++;
             }
         }
-        return count;
+        return count;*/
+
+        int res = 0;
+
+        for (int i = 0; i < str.length(); i++) {
+
+            if (str.charAt(i)==ch){
+
+                res++;
+            }
+
+        }
+        return res;
     }
 
     public static String reversOfString(String str) {
