@@ -10,7 +10,7 @@ public class HomeWorkTest15 {
 
 //        System.out.println(Test.TwoPowerOfNByShift(2));
 //
-//        System.out.println(Test.isPrime(7));
+     System.out.println(Test.isPrime(2));
 //
 //        System.out.println(Test.numberPalidrome(1452));
 //        System.out.println(Test.isPalidromeNumbers(1221));
@@ -23,6 +23,13 @@ public class HomeWorkTest15 {
 //
 //        Test.printExpandIntoPrimeFactors(30);
 //
+
+
+
+
+
+
+
 //        Test.printTwoDimensionalArray(3,3);
 //
      //  Test.printMatrixEx(4,6);
