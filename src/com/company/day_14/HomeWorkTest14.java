@@ -18,9 +18,9 @@ public class HomeWorkTest14 {
 
         System.out.println("Is it binary: "+Test.isBinarNumber("1002010"));
 
-        Test.printCountsOfDuplicateCharacters("asasaaa");
+       // Test.printCountsOfDuplicateCharacters("asasaaa");
 
-       System.out.println(Test.firstNonRepeated("asarts"));
+      // System.out.println(Test.firstNonRepeated("asarts"));
 
         //Test.nonRepeatedValue("asrytaa");
 

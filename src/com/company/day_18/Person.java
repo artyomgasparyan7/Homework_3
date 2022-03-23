@@ -60,11 +60,11 @@ public class Person {
 
     public void setFirstName(String firstName) {
 
-        if (firstName.length() < 3 || firstName.length() > 15) {
+       /* if (firstName.length() < 3 || firstName.length() > 15) {
 
             System.out.println("String firstName  length can't to be out from 3 to 15!!");
             return;
-        } else
+        } else*/
             this.firstName = firstName;
     }
 
@@ -90,7 +90,7 @@ public class Person {
 
         int length = passportId.length();
         boolean isDigit = true;
-        for (int i = 3; i < length - 2; i++) {
+        for (int i = 2; i < length - 2; i++) {
             if (passportId.charAt(i) < '0' || passportId.charAt(i) > '9') {
                 isDigit = false;
                 break;
@@ -109,12 +109,24 @@ public class Person {
 
     public void setAge(int age) {
 
+       /* if (!isValidAge(age)){
+            System.out.println("Can't to be out from18 to 99!!");
+            return;
+
+        }*/
         if (age < 18 || age > 99) {
 
             System.out.println("Can't to be out from18 to 99!!");
             return;
         } else
             this.age = age;
+    }
+
+
+
+    private  boolean isValidAge(int age){
+
+        return age > 18 && age < 99;
     }
 
     public String getGender() {

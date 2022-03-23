@@ -1,5 +1,9 @@
 package com.company.day_23;
 
+import java.util.Iterator;
+import java.util.Spliterator;
+import java.util.function.Consumer;
+
 public class LinkedList implements List {
 
     // java.util.LinkedList<String> mna = new java.util.LinkedList<>();
@@ -77,6 +81,21 @@ public class LinkedList implements List {
             }
             current = current.next;
         }
+    }
+
+    @Override
+    public Iterator iterator() {
+        return null;
+    }
+
+    @Override
+    public void forEach(Consumer action) {
+        List.super.forEach(action);
+    }
+
+    @Override
+    public Spliterator spliterator() {
+        return List.super.spliterator();
     }
 
     class Node {

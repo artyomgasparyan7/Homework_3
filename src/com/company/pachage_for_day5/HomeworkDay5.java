@@ -44,6 +44,8 @@ public class HomeworkDay5 {
         return age;
     }
 
+
+
     public void allInform() {
 
         System.out.println("My name is: " + name + ", My old is: " + age + ", My addres: " + address);

@@ -9,4 +9,9 @@ public class Horse extends Animal {
 
         System.out.println("Horse is ihihihahaha!");
     }
+
+    @Override
+    public void acg() {
+
+    }
 }

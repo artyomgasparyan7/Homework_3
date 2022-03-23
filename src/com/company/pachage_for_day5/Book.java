@@ -14,6 +14,7 @@ public class Book {
     String name;
     Author author;
     double price;
+    char gender;
 
     public Book(String name, Author auther, double price){
 
@@ -22,6 +23,8 @@ public class Book {
         author = auther;
         this.price = price;
     }
+
+
 
 
     public void allInform() {

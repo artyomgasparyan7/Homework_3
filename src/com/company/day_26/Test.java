@@ -2,14 +2,22 @@ package com.company.day_26;
 
 public class Test {
 
-    public static int factorial(int n) {
+    public static int factorial(int n) throws Exception {
 
         if (n == 1) {
 
             return 1;
-        } else if (n < 0) {
+        } else if (n <= 0) {
 
-            return n * factorial(n + 1);
+            try {
+
+                return n * factorial(n + 1);
+            }catch (Exception e){
+
+                throw new Exception("Error");
+
+            }
+
         } else return n * factorial(n - 1);
 
     }

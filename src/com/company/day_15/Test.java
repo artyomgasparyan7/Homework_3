@@ -58,6 +58,10 @@ public class Test {
             return true;
         }
 
+        if (n == 2) {
+            return true;
+        }
+
         if (n % 2 == 0) {
             return false;
         }
@@ -92,6 +96,24 @@ public class Test {
         int result = (hazaravor + haryuravor + tasnavor + miavor);
 
         return result;
+    }
+
+    public static void palindromeInRange(int a, int b) {
+
+        for (int num = 0; num <= b; num++) {
+
+            if ((num % 10) != (num / 1000)) {
+
+                continue;
+            }
+
+            if ((num / 10 % 10) != (num / 100 % 10)) {
+
+                continue;
+            }
+
+            System.out.println(num);
+        }
     }
 
     /**
@@ -169,6 +191,28 @@ public class Test {
             }
             System.out.println();
         }
+    }
+
+    public static char[][] generateBoard(int n) {
+
+        char[][] board = new char[n][n];
+
+        for (int i = 0; i < n; i++) {
+
+            for (int j = 0; j < n; j++) {
+
+                if ((i + j) % 2 == 0) {
+
+                    board[i][j] = '0';
+
+                } else {
+
+                    board[i][j] = 'X';
+                }
+            }
+        }
+
+        return board;
     }
 
     /**
@@ -249,7 +293,29 @@ public class Test {
 
     }
 
-    public static void printMatrixEx(int n, int m){
+    public static int[][] multiplicationTableOneFor(int n, int m) {
+
+
+        int[][] matrix = new int[n][m];
+
+        int j = 0;
+
+        for (int i = 0; i < n; i++) {
+
+            matrix[i][j] = matrix[j][i] = i * j;
+
+            j++;
+
+            if (j == m) {
+
+                j = 0;
+                i++;
+            }
+        }
+        return matrix;
+    }
+
+    public static void printMatrixEx(int n, int m) {
         int arr[][] = new int[n][m];
 
         int j = 0;
@@ -275,9 +341,9 @@ public class Test {
 
     }
 
-    public static void printMatrixSnake(int n , int m){
+    public static void printMatrixSnake(int n, int m) {
 
-        int matrix[][] = null ;
+        int matrix[][] = null;
         matrix = new int[n][m];
 
 
@@ -287,28 +353,43 @@ public class Test {
         System.out.println("Enter 3x3 Matrix elements: ");
         int i = 0;
 
-        for(i=0; i<n; i++) {
+        for (i = 0; i < n; i++) {
 
-            if (i%2 == 0) {
+            if (i % 2 == 0) {
                 for (int j = 0; j < m; j++) {
                     matrix[i][j] = scan.nextInt();
                 }
-            }if (i%2 == 1){
+            }
+            if (i % 2 == 1) {
 
-                for (int j = m-1; j >=0; j--) {
+                for (int j = m - 1; j >= 0; j--) {
                     matrix[i][j] = scan.nextInt();
 
+                }
+            }
+
+
+            System.out.println("Entered Matrix: ");
+            System.out.println(Arrays.deepToString(matrix));
+
+
+        }
+    }
+
+    public static void rotate90(int[][] matrix) {
+        int n = matrix.length;
+        int temp;
+        int end = n - 1;
+        for (int i = 0; i < n / 2; i++) {
+            for (int j = i; j < end - i; j++) {
+                temp = matrix[i][j];
+                matrix[i][j] = matrix[end - j][i];
+                matrix[end - j][i] = matrix[end - i][end - j];
+                matrix[end - i][end - j] = matrix[j][end - i];
+                matrix[j][end - i] = temp;
             }
         }
-
-
-        System.out.println("Entered Matrix: ");
-        System.out.println(Arrays.deepToString(matrix));
-
-
-
-
-    }}
+    }
 
     public static int TwoPowerOfNByShift(int n) {
         if (n <= 2 && n >= 16) {

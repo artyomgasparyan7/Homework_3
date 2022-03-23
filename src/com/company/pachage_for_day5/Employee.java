@@ -13,6 +13,12 @@ public class Employee {
     int id,age;
     String name,department;
     char gender;
+    double version;
+
+    Employee(){
+
+        System.out.println("default constuctor!!!!");
+    }
 
     public Employee(int id, String name, String department,int age, char gender){
 
@@ -25,10 +31,31 @@ public class Employee {
 
     }
 
-    public void allInform() {
+    public Employee(String name, String department,double version){
+
+
+        this.name = name;
+        this.department = department;
+        this.version = version;
+    }
+
+    public Employee(Employee employee){
+        this(employee.name,null,employee.version);
+
+
+    }
+
+    public void main(){
 
         System.out.println("My Id: " + id+", My name is: " + name +
                 ", department of programming,that I learn: "+department+ ", My old is: " + age +
+                ", Gender: " + gender + "Version: " + version);
+    }
+
+    public void allInform() {
+
+        System.out.println("My Id: " + id+", My name is: " + name +
+                ", department is: "+department+ ", My old is: " + age +
                 ", Gender: " + gender);
 
     }

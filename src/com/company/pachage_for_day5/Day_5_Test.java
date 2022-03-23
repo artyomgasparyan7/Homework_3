@@ -111,6 +111,24 @@ public class Day_5_Test {
         employee4.allInform();
         employee5.allInform();
 
+        System.out.println();
+
+        Employee empoverload = new Employee("Gag","IT",78.5);
+
+        Employee objoverload = new Employee(empoverload);
+
+        Employee defautlobj = new Employee();
+
+        System.out.println("/////////////////////////////////");
+
+        //System.out.println(defautlobj.toString());
+        objoverload.main();
+        objoverload.allInform();
+
+        empoverload.allInform();
+
+        System.out.println("********************************");
+
         //create an instance of Author and print all info about him
         Author author = new Author("Herbert","herbertshild@gmail.com","male");
         author.allInform();
@@ -128,6 +146,8 @@ public class Day_5_Test {
 
         book1.allInform();
         book2.allInform();
+
+
 
 
 
