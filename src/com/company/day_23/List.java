@@ -1,6 +1,6 @@
 package com.company.day_23;
 
-public interface List extends Iterable {
+public interface List {
 
     public int size();
     public boolean isEmpty(LinkedList.Node head, int x);
