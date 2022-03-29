@@ -1,9 +1,6 @@
 package com.company.day_27;
 
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.Comparator;
-import java.util.List;
+import java.util.*;
 
 public class Test {
 
@@ -42,22 +39,44 @@ public class Test {
         return list;
     }
 
-    public static <T> int returnLargestValue(List<T> list, Comparator<T> comparator) {
+    /**
+     * 3. Write a method which takes a List of T type and Comparator of type
+     * T. Return the largest value in the list.
+     *
+     * @param list
+     * @param comparator
+     * @param <T>
+     * @return
+     */
+    public static <T> T returnLargestValue(List<T> list, Comparator<T> comparator) {
 
 
-        //list = new ArrayList<>();
+        T max = list.get(0);
+        for (T t : list) {
+            if (comparator.compare(t, max) > 0) {
 
-        // Create maxValue variable and initialize with 0
-        int maxValue = 0;
+                max = t;
 
-        comparator = new Comparator<T>() {
-            @Override
-            public int compare(T o1, T o2) {
-               // int i = o1 - o2;
-                return -1;
             }
-        };
 
-return 0;
+        }
+        return max;
+    }
+
+    /**
+     * 4. Define a method copy(dest, src) which will copy from src to dest. src
+     * and dest are lists. (use wildcards for this problem)
+     * Method should work for this example`
+     * @param src
+     * @param dest
+     * @param <T>
+     */
+    public static <T> void copy(Collection<? extends Integer> src,
+                             Collection<? super Integer> dest) {
+
+        Iterator<? extends Integer> iter = src.iterator();
+        while (iter.hasNext())
+            dest.add(iter.next());
+
     }
 }

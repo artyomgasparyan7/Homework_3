@@ -1,7 +1,6 @@
 package com.company.day_23.ourLinkedList;
 
 import java.util.Iterator;
-import java.util.LinkedList;
 
 public class LinkedContainer<E> implements Linked<E>, Iterable<E>, DescendingIterator<E> {
 
@@ -71,16 +70,16 @@ public class LinkedContainer<E> implements Linked<E>, Iterable<E>, DescendingIte
     public Iterator<E> iterator() {
         return new Iterator<E>() {
 
-            int counteer = 0;
+            int counter = 0;
 
             @Override
             public boolean hasNext() {
-                return counteer < size;
+                return counter < size;
             }
 
             @Override
             public E next() {
-                return getElementByIndex(counteer++);
+                return getElementByIndex(counter++);
             }
         };
     }

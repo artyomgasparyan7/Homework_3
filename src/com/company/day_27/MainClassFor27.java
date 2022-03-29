@@ -1,6 +1,8 @@
 package com.company.day_27;
 
 import java.util.ArrayList;
+import java.util.Collections;
+import java.util.Comparator;
 import java.util.List;
 
 public class MainClassFor27 {
@@ -34,5 +36,19 @@ public class MainClassFor27 {
         System.out.println(Test.convertTTypeArrayOfToTTypeList(arrString));
 
 
+        List<Integer> integers = new ArrayList<>();
+        integers.add(4);
+        integers.add(7);
+        integers.add(1);
+
+        Comparator<Integer> comparator = new Comparator<Integer>() {
+            @Override
+            public int compare(Integer o1, Integer o2) {
+                return o1-o2;
+            }
+        };
+        System.out.println(Test.returnLargestValue(integers, comparator));
+
+        Collections.sort(integers,comparator);
     }
 }
